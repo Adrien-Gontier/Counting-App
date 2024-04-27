@@ -8,15 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showDetails : Int = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Text("Hello, Adrien !")
-        }
+        Text("Simple Counting App")
         .padding()
+        .font(.system(size: 30))
+        .fixedSize()
+        .frame(width: 100, height: 0)
+        Text(String(describing: showDetails))
+            .padding()
+            .font(.system(size: 40))
+            .fixedSize()
+            .frame(width: 250, height: 200)
+        
+        Button {
+        action: do {
+            showDetails += 1
+        }
+        }label: {
+            Text("Plus 1")
+                .padding([.top, .bottom], 15)
+                .padding([.trailing, .leading], 25)
+                .font(.system(size: 25))
+                .foregroundColor(.blue)
+                .background(.white)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.blue, lineWidth: 5))
+                .fixedSize()
+                .frame(width: 50, height: 60)
+        }.padding(.bottom, 30)
     }
 }
 
