@@ -37,6 +37,23 @@ struct ContentView: View {
                 .fixedSize()
                 .frame(width: 50, height: 60)
         }.padding(.bottom, 30)
+        
+        
+        Button {
+        action: do {
+            showDetails -= 1}
+        }label: {
+            Text("Minus 1")
+                .padding(15)
+                .font(.system(size: 25))
+                .foregroundColor(.black)
+                .background(.white)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.black, lineWidth: 5))
+                .fixedSize()
+                .frame(width: 50, height: 60)
+        }.padding(.bottom, 90)
+        
     }
 }
 
