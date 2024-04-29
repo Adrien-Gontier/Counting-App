@@ -11,10 +11,10 @@ struct ContentView: View {
     @State var showDetails : Int = 0
     var body: some View {
         Text("Simple Counting App")
-        .padding()
-        .font(.system(size: 30))
-        .fixedSize()
-        .frame(width: 100, height: 0)
+            .padding()
+            .font(.system(size: 30))
+            .fixedSize()
+            .frame(width: 100, height: 0)
         Text(String(describing: showDetails))
             .padding()
             .font(.system(size: 40))
@@ -53,6 +53,25 @@ struct ContentView: View {
                 .fixedSize()
                 .frame(width: 50, height: 60)
         }.padding(.bottom, 90)
+        
+        
+        Button {
+            action : do {
+                showDetails = 0}
+        } label : {
+            Text("Reset")
+                .padding(15)
+                .font(.system(size: 25))
+                .foregroundColor(.red)
+                .background(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.red, lineWidth: 5))
+                .fixedSize()
+                .frame(width: 50, height: 60)
+        }
+        
+    
         
     }
 }
